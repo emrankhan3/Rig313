@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rig313.Core.Customers
 {
-    internal class Customer:BaseEntity
+    public class Customer:BaseEntity
     {
         public string Name { get; set; }
         public string Address { get; set; }

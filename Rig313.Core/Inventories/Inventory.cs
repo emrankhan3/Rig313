@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rig313.Core.Inventories
 {
-    internal class Inventory
+    public class Inventory
     {
     }
 }

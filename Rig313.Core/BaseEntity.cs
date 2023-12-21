@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rig313.Core
 {
-    internal class BaseEntity
+    public class BaseEntity
     {
         public int Id { get; set; }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rig313.Core.Orders
 {
-    internal class Order:BaseEntity
+    public class Order:BaseEntity
     {
         public int CustomerId { get; set; }
         public String  ShipmentAddress { get; set; }

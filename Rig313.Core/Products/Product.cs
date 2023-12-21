@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Rig313.Core.Products
 {
-    internal class Product:BaseEntity
+    public class Product:BaseEntity
     {
         public string Name { get; set; }
         public string Description { get; set; }

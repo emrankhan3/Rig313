@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rig313.Core.OrderProductMapping
 {
-    internal class OrderItem:BaseEntity
+    public class OrderItem:BaseEntity
     {
         public int OrderId { get; set; }
         public int ProductId { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rig313.Core.Users
 {
-    internal class User
+    public class User
     {
     }
 }
