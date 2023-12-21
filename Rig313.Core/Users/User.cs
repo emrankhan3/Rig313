@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rig313.Core
+namespace Rig313.Core.Users
 {
-    internal class BaseEntity
+    internal class User
     {
-        public int Id { get; set; }
-
-
     }
 }

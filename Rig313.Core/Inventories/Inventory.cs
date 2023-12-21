@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rig313.Core
+namespace Rig313.Core.Inventories
 {
-    internal class BaseEntity
+    internal class Inventory
     {
-        public int Id { get; set; }
-
-
     }
 }
