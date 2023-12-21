@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Rig313.Core.OrderProductMapping
 {
-    internal class OrderProductMap:BaseEntity
+    internal class OrderItem:BaseEntity
     {
         public int OrderId { get; set; }
         public int ProductId { get; set; }
-        public int Unit { get; set; }
+        public int Quantity { get; set; }
         public double UnitPrice { get; set; }
         public double Discount { get; set; }
 

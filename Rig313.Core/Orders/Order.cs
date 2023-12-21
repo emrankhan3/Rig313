@@ -14,5 +14,6 @@ namespace Rig313.Core.Orders
         public double TotalPrice { get; set; }
         public int PaymentMethod { get; set; }
         public int PaymentStatus { get; set; }
+        public float ShipmentCharge { get; set; }
     }
 }
