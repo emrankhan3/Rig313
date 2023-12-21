@@ -15,5 +15,13 @@ namespace Rig313.Core.Orders
         public int PaymentMethod { get; set; }
         public int PaymentStatus { get; set; }
         public float ShipmentCharge { get; set; }
+        public float PaidAmount { get; set; }
+        public DateTime PlacingDateTime { get; set; }
+        public DateTime? ProcessingDateTime { get; set; }
+        public DateTime? ShippingDateTime { get; set; }
+        public DateTime? DeliveryDateTime { get; set; }
+        public DateTime? CancelDateTime { get; set; }
+        public DateTime? ReturnDateTime { get; set; }
+        public DateTime? PaymentDateTime { get; set; }
     }
 }
