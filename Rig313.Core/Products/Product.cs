@@ -17,5 +17,9 @@ namespace Rig313.Core.Products
         public int Discount { get; set; }
 
 
+<<<<<<< Updated upstream
+=======
+        public Category? Category { get; private set; }
+>>>>>>> Stashed changes
     }
 }
