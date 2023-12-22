@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using Rig313.WebAdmin.Models;
+using Rig313.Web.Models;
 using System.Diagnostics;
 
-namespace Rig313.WebAdmin.Controllers
+namespace Rig313.Web.Controllers
 {
     public class HomeController : Controller
     {

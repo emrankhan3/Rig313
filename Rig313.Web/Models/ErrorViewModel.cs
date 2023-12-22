@@ -1,4 +1,4 @@
-namespace Rig313.WebAdmin.Models
+namespace Rig313.Web.Models
 {
     public class ErrorViewModel
     {
