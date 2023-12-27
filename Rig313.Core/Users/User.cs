@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Rig313.Core.Customers;
 
 namespace Rig313.Core.Users
 {
@@ -14,5 +15,7 @@ namespace Rig313.Core.Users
         public string Email { get; set; }
         public int UserRole { get; set; }
         public UserPermission? UserPermission { get; private set; }
+
+        public Customer Customer { get; set; }
     }
 }
