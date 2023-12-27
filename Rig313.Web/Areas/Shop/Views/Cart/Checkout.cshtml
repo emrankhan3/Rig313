@@ -1,0 +1,91 @@
+﻿@{
+	ViewData["Title"] = "Checkout";
+}
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<div class="product">
+			<div class="row container-fluid flex-lg-row" style="padding-top:15px; margin-bottom:-15px;">
+				<div class="product-img col-md-1">
+					<img src="~/img/product01.png" alt="">
+				</div>
+				<div class="product-body col-md-4" style="vertical-align:middle;">
+					<h3 class="product-name" style="font-size:125%;"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="productid">product name goes here</a></h3>
+				</div>
+				<div class="product-body col-md-3 m-auto">
+					<h5 class="product-price d-inline-block">Unit Price: $980.00 <del class="product-old-price">$1000.00</del></h5>
+					<h5 class="product-price d-inline-block">Quantity : x1</h5>
+				</div>
+				<div class="product-body col-md-3" style="vertical-align:middle; text-align:right;">
+					<h3 class="" style="font-size:125%;">Price : $980.00</h3>
+				</div>
+				<div class="product-body col-md-1" style="vertical-align:middle;">
+					<button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+				</div>
+			</div>
+			<hr/>
+			<div class="row container-fluid flex-lg-row" style="padding-top:15px; margin-bottom:-15px;">
+				<div class="product-img col-md-1">
+					<img src="~/img/product01.png" alt="">
+				</div>
+				<div class="product-body col-md-4" style="vertical-align:middle;">
+					<h3 class="product-name" style="font-size:125%;"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="productid">product name goes here</a></h3>
+				</div>
+				<div class="product-body col-md-3 m-auto">
+					<h5 class="product-price d-inline-block">Unit Price: $980.00 <del class="product-old-price">$1000.00</del></h5>
+					<h5 class="product-price d-inline-block">Quantity : x1</h5>
+				</div>
+				<div class="product-body col-md-3" style="vertical-align:middle; text-align:right;">
+					<h3 class="" style="font-size:125%;">Price : $980.00</h3>
+				</div>
+				<div class="product-body col-md-1" style="vertical-align:middle;">
+					<button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+				</div>
+			</div>
+			<hr/>
+			<div class="row container-fluid flex-lg-row">
+				<div class="col-md-1">
+					
+				</div>
+				<div class="col-md-4" style="vertical-align:middle;">
+					
+				</div>
+				<div class="col-md-6" style="vertical-align:middle; text-align:right;">
+					<h3 class="" style="font-size:125%;">Subtotal : $1960.00</h3>
+					<h3 class="" style="font-size:125%;">Shipment Charge : $2.00</h3>
+					<h3 class="" style="font-size:125%;">Total : $1962.00</h3>
+					<br/>
+				</div>
+				<div class="col-md-1" style="vertical-align:middle;">
+				</div>
+
+			</div>
+			<hr/>
+			<form method="post" class="form-check" style="width:90%; margin:auto">
+				<div class="form-group">
+					<h4>Receiver's Name</h4>
+					<input type="text" class="form-control" cols="100" name="receiversname" value="Receiver's Name Here" disabled required>
+				</div>
+                <div class="form-group">
+                    <h4>Contact Number</h4>
+					<input type="text" class="form-control" cols="100" name="phone" value="Contact Number Here" disabled required>
+                </div>
+				<div class="form-group">
+					<h4>Shipping Address</h4>
+					<textarea rows="6" class="form-control" name="address"></textarea>
+				</div>
+				
+				<a asp-area="Shop" asp-controller="Cart" asp-action="Index" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Go Back</a>
+				<button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Place Order</button>
+			</form>
+				
+			<br />
+		</div>
+
+	</div>
+	<!-- /container -->
+</div>
+<!-- /SECTION -->
+<br />
+<br />
+<br />

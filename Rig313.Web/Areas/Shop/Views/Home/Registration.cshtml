@@ -1,0 +1,51 @@
+﻿@{
+	ViewData["Title"] = "Registration";
+}
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<div class="product container-fluid flex-lg-row">
+			<form method="post">
+				<div class="row" style="padding:5px">
+					<div class="col-md-6">
+						<label style="font-size:125%; padding:5px 0px;">Name</label>
+						<input type="text" class="form-control" placeholder="Enter Name"/>
+					</div>
+					<div class="col-md-6">
+						<label style="font-size:125%; padding:5px 0px;">Username</label>
+						<input type="text" class="form-control" placeholder="Enter Username" />
+					</div>
+				</div>
+				<div class="row" style="padding:5px">
+					<div class="col-md-6">
+						<label style="font-size:125%; padding:5px 0px;">Phone</label>
+						<input type="text" class="form-control" placeholder="Enter Contact Number" />
+					</div>
+					<div class="col-md-6">
+						<label style="font-size:125%; padding:5px 0px;">Email</label>
+						<input type="email" class="form-control" placeholder="Enter Email Address" />
+					</div>
+				</div>
+
+				<div class="row" style="padding:5px">
+					<div class="col-md-6">
+						<label style="font-size:125%; padding:5px 0px;">Address</label>
+						<textarea type="text" class="form-control" placeholder="Enter your full Address" rows="5"></textarea>
+					</div>
+				</div>
+				<br/>
+				<div class="row text-center">
+					<button type="submit" class="btn btn-success"><i class="fa fa-file-text"></i> Submit</button>
+					<br /><br />
+					Already registered? <a asp-area="Shop" asp-controller="Home" asp-action="Login">Login Here</a>
+				</div>
+				<br />
+			</form>
+		</div>
+	</div>
+	<!-- /container -->
+</div>
+<!-- /SECTION -->
+<br />
+<br />
+<br /> 

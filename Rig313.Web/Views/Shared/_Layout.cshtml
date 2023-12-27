@@ -1,75 +1,55 @@
-﻿
+﻿@{
+	
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-	<title>Electro - HTML Ecommerce Template</title>
-
-	<!-- Google font -->
+	<title>@ViewData["Title"] - Rig313</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
-	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css" />
-
-	<!-- Slick -->
 	<link type="text/css" rel="stylesheet" href="~/css/slick.css" />
 	<link type="text/css" rel="stylesheet" href="~/css/slick-theme.css" />
-
-	<!-- nouislider -->
 	<link type="text/css" rel="stylesheet" href="~/css/nouislider.min.css" />
-
-	<!-- Font Awesome Icon -->
 	<link rel="stylesheet" href="~/css/font-awesome.min.css">
-
-	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="~/css/style.css" />
-
-	<!-- HTML5 shim and Respond.~/js/ for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.~/js/ doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
 
 </head>
 <body>
-	<!-- HEADER -->
 	<header>
-		<!-- TOP HEADER -->
 		<div id="top-header">
 			<div class="container">
 				<ul class="header-links pull-left">
-					<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-					<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-					<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+					<li><a href="#"><i class="fa fa-phone"></i> +880123456789</a></li>
+					<li><a href="#"><i class="fa fa-envelope-o"></i> rig313@example.com</a></li>
+					<li><a href="#"><i class="fa fa-map-marker"></i> DUET Area, Gazipur</a></li>
 				</ul>
 				<ul class="header-links pull-right">
-					<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-					<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+					<li><a href="#"><i class="fa fa-dollar"></i> BDT</a></li>
+					<li><a asp-area="Shop" asp-controller="Home" asp-action="Profile"><i class="fa fa-user-o"></i> My Account</a></li>
+					<li>
+						<a asp-area="Shop" asp-controller="Home" asp-action="Registration"><i class="fa fa-user-o"></i> Registration</a> <a>/</a> 
+						<a asp-area="Shop" asp-controller="Home" asp-action="Login">Login</a>
+					</li>
+					<li><a asp-area="Shop" asp-controller="Order" asp-action="Index"><i class="fa fa-shopping-bag"></i> Orders</a></li>
 				</ul>
 			</div>
 		</div>
-		<!-- /TOP HEADER -->
-		<!-- MAIN HEADER -->
+		
 		<div id="header">
-			<!-- container -->
 			<div class="container">
-				<!-- row -->
 				<div class="row">
-					<!-- LOGO -->
 					<div class="col-md-3">
 						<div class="header-logo">
-							<a href="#" class="logo">
-								<img src="./img/logo.png" alt="">
+							<a asp-area="Shop" asp-controller="Home" asp-action="Index" class="logo">
+								<img src="~/img/logo.png" alt="">
 							</a>
 						</div>
 					</div>
-					<!-- /LOGO -->
-					<!-- SEARCH BAR -->
+
 					<div class="col-md-6">
 						<div class="header-search">
 							<form>
@@ -83,20 +63,9 @@
 							</form>
 						</div>
 					</div>
-					<!-- /SEARCH BAR -->
-					<!-- ACCOUNT -->
 					<div class="col-md-3 clearfix">
-						<div class="header-ctn">
-							<!-- Wishlist -->
-							<div>
-								<a href="#">
-									<i class="fa fa-heart-o"></i>
-									<span>Your Wishlist</span>
-									<div class="qty">2</div>
-								</a>
-							</div>
-							<!-- /Wishlist -->
-							<!-- Cart -->
+						<div class="header-ctn" style="cursor:pointer;">
+							
 							<div class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 									<i class="fa fa-shopping-cart"></i>
@@ -107,7 +76,7 @@
 									<div class="cart-list">
 										<div class="product-widget">
 											<div class="product-img">
-												<img src="./img/product01.png" alt="">
+												<img src="~/img/product01.png" alt="">
 											</div>
 											<div class="product-body">
 												<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -118,7 +87,7 @@
 
 										<div class="product-widget">
 											<div class="product-img">
-												<img src="./img/product02.png" alt="">
+												<img src="~/img/product02.png" alt="">
 											</div>
 											<div class="product-body">
 												<h3 class="product-name"><a href="#">product name goes here</a></h3>
@@ -132,46 +101,43 @@
 										<h5>SUBTOTAL: $2940.00</h5>
 									</div>
 									<div class="cart-btns">
-										<a href="#">View Cart</a>
-										<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+										<a asp-area="Shop" asp-controller="Cart" asp-action="Index">View Cart</a>
+										<a asp-area="Shop" asp-controller="Cart" asp-action="Checkout">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
 									</div>
 								</div>
 							</div>
-							<!-- /Cart -->
-							<!-- Menu Toogle -->
 							<div class="menu-toggle">
 								<a href="#">
 									<i class="fa fa-bars"></i>
 									<span>Menu</span>
 								</a>
 							</div>
-							<!-- /Menu Toogle -->
 						</div>
 					</div>
-					<!-- /ACCOUNT -->
 				</div>
-				<!-- row -->
 			</div>
-			<!-- container -->
 		</div>
-		<!-- /MAIN HEADER -->
 	</header>
-	<!-- /HEADER -->
-	<!-- NAVIGATION -->
+	
 	<nav id="navigation">
 		<!-- container -->
 		<div class="container">
 			<!-- responsive-nav -->
 			<div id="responsive-nav">
 				<!-- NAV -->
-				<ul class="main-nav nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Hot Deals</a></li>
-					<li><a href="#">Categories</a></li>
-					<li><a href="#">Laptops</a></li>
-					<li><a href="#">Smartphones</a></li>
-					<li><a href="#">Cameras</a></li>
-					<li><a href="#">Accessories</a></li>
+				<ul class="main-nav nav navbar-nav flex-grow-1">
+					<li class="active"><a asp-area="Shop" asp-controller="Home" asp-action="Index">Home</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Laptop">Laptops</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Desktop">Desktops</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Processor">Processor</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Motherboard">Motherboard</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="RAM">RAM</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="SSD">SSD</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="HDD">HDD</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Casing">Desktop Casing</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Monitor">Monitor</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="PSU">Power Supply</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Accessories">Accessories</a></li>
 				</ul>
 				<!-- /NAV -->
 			</div>
@@ -203,23 +169,16 @@
 							<h3 class="footer-title">About Us</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
 							<ul class="footer-links">
-								<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-								<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-								<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+								<li><a href="#"><i class="fa fa-map-marker"></i>DUET Area, Gazipur</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>+880123456789</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o"></i>rig313@example.com</a></li>
 							</ul>
 						</div>
 					</div>
 
 					<div class="col-md-3 col-xs-6">
 						<div class="footer">
-							<h3 class="footer-title">Categories</h3>
-							<ul class="footer-links">
-								<li><a href="#">Hot deals</a></li>
-								<li><a href="#">Laptops</a></li>
-								<li><a href="#">Smartphones</a></li>
-								<li><a href="#">Cameras</a></li>
-								<li><a href="#">Accessories</a></li>
-							</ul>
+							
 						</div>
 					</div>
 
@@ -229,7 +188,6 @@
 						<div class="footer">
 							<h3 class="footer-title">Information</h3>
 							<ul class="footer-links">
-								<li><a href="#">About Us</a></li>
 								<li><a href="#">Contact Us</a></li>
 								<li><a href="#">Privacy Policy</a></li>
 								<li><a href="#">Orders and Returns</a></li>
@@ -244,7 +202,6 @@
 							<ul class="footer-links">
 								<li><a href="#">My Account</a></li>
 								<li><a href="#">View Cart</a></li>
-								<li><a href="#">Wishlist</a></li>
 								<li><a href="#">Track My Order</a></li>
 								<li><a href="#">Help</a></li>
 							</ul>

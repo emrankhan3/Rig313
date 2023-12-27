@@ -1,0 +1,46 @@
+﻿@{
+	ViewData["Title"] = "Login";
+}
+
+<div class="col-md-4">
+</div>
+<div class="col-md-4 product" style="padding:5px;margin:10px;">
+	<form method="post">
+		<div class="form-group">
+			<h2 class="text-center">Login</h2>
+			<hr />
+			<div class="row">
+				<div class="col-md-5 text-center">
+					<label style="font-size:125%;">Phone</label>
+				</div>
+				<div class="col-md-7">
+					<input type="text" placeholder="Enter Phone Number" class="form-control" />
+				</div>
+			</div>
+			<br/>
+			<div class="row">
+				<div class="col-md-5 text-center">
+					<label style="font-size:125%;">Password</label>
+				</div>
+				<div class="col-md-7">
+					<input type="password" placeholder="Enter Password" class="form-control" />
+				</div>
+			</div>
+			<br/>
+			<div class="row text-center">
+				<button type="submit" class="btn btn-success">Login</button> 
+				<br/>
+				<br/>
+				Not registered? <a asp-area="Shop" asp-controller="Home" asp-action="Registration">Register Here</a>
+			</div>
+		</div>
+	</form>
+</div>
+<div class="col-md-4">
+</div>
+
+<div class="clearfix"></div>
+
+<br />
+<br />
+<br />
