@@ -5,6 +5,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Rig313.Core.Carting;
+using Rig313.Core.Inventories;
+using Rig313.Core.Orders;
 
 namespace Rig313.Core.Products
 {
@@ -18,5 +21,10 @@ namespace Rig313.Core.Products
         public double Discount { get; set; }
 
         public Category? Category { get; private set; }
+        
+        public Inventory Inventories { get; set; }
+
+        public CartItem CartItem { get; set; }
+        public OrderItem OrderItem { get; set; }
     }
 }
