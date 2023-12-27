@@ -16,9 +16,9 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\" />
-    <Folder Include="Areas\Shop\Controllers\" />
     <Folder Include="Areas\Shop\Data\" />
     <Folder Include="Areas\Shop\Models\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

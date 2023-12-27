@@ -2,24 +2,26 @@ using Microsoft.AspNetCore.Mvc;
 using Rig313.Web.Models;
 using System.Diagnostics;
 
-namespace Rig313.Web.Controllers
+namespace Rig313.Web.Areas.Shop.Controllers
 {
-    public class HomeController : Controller
+    [Area("Shop")]
+    public class ProductController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ProductController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public ProductController(ILogger<ProductController> logger)
         {
             _logger = logger;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult Privacy()
+        public IActionResult Details(string? id)
         {
+            
             return View();
         }
 
