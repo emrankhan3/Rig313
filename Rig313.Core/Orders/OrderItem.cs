@@ -15,5 +15,6 @@ namespace Rig313.Core.Orders
         public double UnitPrice { get; set; }
         public double Discount { get; set; }
         public Product? Product { get; private set; }
+        public Order Order { get; set; }
     }
 }

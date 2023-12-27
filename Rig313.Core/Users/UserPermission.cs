@@ -15,5 +15,6 @@ namespace Rig313.Core.Users
         public bool ProductManager { get; set; }
         public bool InventoryManager { get; set; }
         public bool CustomerManager { get; set; }
+        public User User { get; set; }
     }
 }
