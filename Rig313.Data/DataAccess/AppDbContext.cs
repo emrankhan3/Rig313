@@ -105,14 +105,41 @@ namespace Rig313.Data.DataAccess
             modelBuilder.Entity<OrderItem>().HasOne(u => u.Product)
                 .WithOne(u => u.OrderItem)
                 .HasForeignKey<OrderItem>(u => u.ProductId);
+
+
+
+            modelBuilder.Entity<Category>().HasData(
+                new { Id = 1, Name = "Laptop", Description ="Laptop Description", DisplayOrder =1, ImageUrl="SampleImageUrl"},
+                new { Id = 2, Name = "Desktop", Description = "Desktop Description", DisplayOrder = 2, ImageUrl = "SampleImageUrl2" }
+            );
+            modelBuilder.Entity<Product>().HasData(
+                new { Id = 1, Name = "Laptop 1", Description = "Laptop1 Description", Price=60000.0, CategoryId=1, Discount=0.0},
+                new { Id = 2, Name = "Laptop 2", Description = "Laptop2 Description", Price=63000.0, CategoryId=1, Discount=0.0},
+                new { Id = 3, Name = "Desktop 1", Description = "Desktop1 Description", Price=48000.0, CategoryId=2, Discount=0.05},
+                new { Id = 4, Name = "Desktop 2", Description = "Desktop2 Description", Price=50000.0, CategoryId=2, Discount=0.0}
+            );
+
+            modelBuilder.Entity<Inventory>().HasData(
+                new { Id = 1, ProductId = 1, StockAvailable = 30, OnPending=0, OnShipped = 0, Delivered = 0},
+                new { Id = 2, ProductId = 2, StockAvailable = 20, OnPending=0, OnShipped = 0, Delivered = 0},
+                new { Id = 3, ProductId = 3, StockAvailable = 45, OnPending=0, OnShipped = 0, Delivered = 0},
+                new { Id = 4, ProductId = 4, StockAvailable = 0, OnPending=0, OnShipped = 0, Delivered = 0}
+            );
+
+            modelBuilder.Entity<User>().HasData(
+                new {Id = 1, Username="admin", Password = "amdin", Phone="+880123456789", Email = "admin@rig313.com", UserRole = 1},
+                new {Id = 89, Username="customer", Password = "customer", Phone="+880123456780", Email = "customer@rig313.com", UserRole = 2}
+            );
             
+            modelBuilder.Entity<UserPermission>().HasData(
+                new {Id = 1, UserId=1, Customer = false, SuperAdmin=true, CategoryManager = true, ProductManager = true, InventoryManager = true, CustomerManager = true},
+                new {Id = 89, UserId=89, Customer = true, SuperAdmin=false, CategoryManager = false, ProductManager = false, InventoryManager = false, CustomerManager = false}
+            );
+
             
-
-
-
-
-
-
+            modelBuilder.Entity<Customer>().HasData(
+                new { Id = 89, Name = "Customer 1", Address = "Customer Address", UserId = 89}
+            );
 
 
 
