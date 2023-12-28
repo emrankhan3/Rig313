@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Rig313.Core\Rig313.Core.csproj" />
+    <ProjectReference Include="..\Rig313.Data\Rig313.Data.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -113,10 +113,10 @@ namespace Rig313.Data.DataAccess
                 new { Id = 2, Name = "Desktop", Description = "Desktop Description", DisplayOrder = 2, ImageUrl = "SampleImageUrl2" }
             );
             modelBuilder.Entity<Product>().HasData(
-                new { Id = 1, Name = "Laptop 1", Description = "Laptop1 Description", Price=60000.0, CategoryId=1, Discount=0.0},
-                new { Id = 2, Name = "Laptop 2", Description = "Laptop2 Description", Price=63000.0, CategoryId=1, Discount=0.0},
-                new { Id = 3, Name = "Desktop 1", Description = "Desktop1 Description", Price=48000.0, CategoryId=2, Discount=0.05},
-                new { Id = 4, Name = "Desktop 2", Description = "Desktop2 Description", Price=50000.0, CategoryId=2, Discount=0.0}
+                new { Id = 1, Name = "Laptop 1", Description = "Laptop1 Description", Price=60000.0, CategoryId=1, Discount=0.0, ImageUrl = "https://firebasestorage.googleapis.com/v0/b/rig313.appspot.com/o/product01.png?alt=media&token=f6ab9d5e-2916-4bd9-9905-9ec8e9c37cf3" },
+                new { Id = 2, Name = "Laptop 2", Description = "Laptop2 Description", Price=63000.0, CategoryId=1, Discount=0.0, ImageUrl = "https://firebasestorage.googleapis.com/v0/b/rig313.appspot.com/o/product03.png?alt=media&token=0d819674-53bf-41d0-8068-9b840799475e" },
+                new { Id = 3, Name = "Desktop 1", Description = "Desktop1 Description", Price=48000.0, CategoryId=2, Discount=0.05, ImageUrl = "https://firebasestorage.googleapis.com/v0/b/rig313.appspot.com/o/product06.png?alt=media&token=94a3f820-5f16-4aa3-91ba-2c35ae221f69" },
+                new { Id = 4, Name = "Desktop 2", Description = "Desktop2 Description", Price=50000.0, CategoryId=2, Discount=0.0, ImageUrl = "https://firebasestorage.googleapis.com/v0/b/rig313.appspot.com/o/product08.png?alt=media&token=0b023b8b-533a-4b65-8f24-9183803a9e42" }
             );
 
             modelBuilder.Entity<Inventory>().HasData(
