@@ -110,7 +110,8 @@ namespace Rig313.Data.DataAccess
 
             modelBuilder.Entity<Category>().HasData(
                 new { Id = 1, Name = "Laptop", Description ="Laptop Description", DisplayOrder =1, ImageUrl="SampleImageUrl"},
-                new { Id = 2, Name = "Desktop", Description = "Desktop Description", DisplayOrder = 2, ImageUrl = "SampleImageUrl2" }
+                new { Id = 2, Name = "Desktop", Description = "Desktop Description", DisplayOrder = 2, ImageUrl = "SampleImageUrl2" },
+                new { Id = 3, Name = "Accessories", Description = "Accessories", DisplayOrder = 3, ImageUrl = "SampleImageUrl3" }
             );
             modelBuilder.Entity<Product>().HasData(
                 new { Id = 1, Name = "Laptop 1", Description = "Laptop1 Description", Price=60000.0, CategoryId=1, Discount=0.0, ImageUrl = "https://firebasestorage.googleapis.com/v0/b/rig313.appspot.com/o/product01.png?alt=media&token=f6ab9d5e-2916-4bd9-9905-9ec8e9c37cf3" },
