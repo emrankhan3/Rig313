@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Rig313.Data
 {
-    internal class Repository<T> : IRepository<T> where T : BaseEntity
+    public class Repository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly AppDbContext _context;
         private readonly DbSet<T> _table;
@@ -32,12 +32,15 @@ namespace Rig313.Data
             _context.SaveChanges();
         }
 
-        public IEnumerable<T?> GetAll()
+        public IEnumerable<T?> GetAll(bool noTrack = false)
         {
-            return _table.ToList();
+            if(noTrack) return _table.AsNoTracking().ToList();
+			return _table.ToList();
         }
 
-        public T? GetById(int id)
+
+
+		public T? GetById(int id)
         {
             return _table.Where(u => u.Id == id).FirstOrDefault();
         }

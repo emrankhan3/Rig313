@@ -10,7 +10,7 @@ namespace Rig313.Data.IRepository
     public interface IRepository<T> where T : BaseEntity
     {
         public T? GetById(int id);
-        public IEnumerable<T?> GetAll();
+        public IEnumerable<T?> GetAll(bool noTrack = false);
         public void Add(T entity);
 
         public void Update(T entity);

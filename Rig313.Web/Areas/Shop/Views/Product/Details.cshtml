@@ -1,22 +1,35 @@
 ﻿@{
 	ViewData["Title"] = "Product Details";
 }
+@model ProductViewModel
+
 <div class="section">
 	<!-- container -->
 	<div class="container">
 		<div class="product row container-fluid flex-lg-row">
 			<div class="product-img col-md-5 taller">
-				<img src="~/img/product01.png" alt="">
+				<img src="@Model.Product.ImageUrl" alt="">
 				<div class="product-label">
-					<span class="sale">-30%</span>
-					<span class="new">NEW</span>
+					@if (@Model.Product.Discount > 0.0)
+					{
+						<span class="sale">-@(@Model.Product.Discount * 100)%</span>
+					}
 				</div>
 			</div>
 			<div class="product-body col-md-7">
-				<p class="product-category">Category</p>
-				<h3 class="product-name"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="productid">product name goes here</a></h3>
-				<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-				<h4 class="product-price">Stock Available : 89</h4>
+				<p class="product-category">@Model.Category.Name</p>
+				<h3 class="product-name"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="@Model.Product.Id">@Model.Product.Name</a></h3>
+				@if (Model.Product.Discount > 0.0)
+				{
+					<h4 class="product-price"> Price : @(Model.Product.Price * (1 - Model.Product.Discount))
+						<del class="product-old-price">@Model.Product.Price</del>
+					</h4>
+				}
+				else
+				{
+					<h4 class="product-price">Price : @Model.Product.Price</h4>
+				}
+				<h4 class="product-price">Stock Available : @(Model.Inventory.StockAvailable - Model.Inventory.OnPending)</h4>
 				<div class="product-rating">
 					<i class="fa fa-star"></i>
 					<i class="fa fa-star"></i>

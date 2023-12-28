@@ -6,25 +6,29 @@ using System.Threading.Tasks;
 using Rig313.Data;
 using Rig313.Core.Categories;
 using Rig313.Data.IRepository;
+using Rig313.Core.Products;
+using Rig313.Core.Inventories;
 
 namespace Rig313.Services
 {
-	public class CategoryService
+	public class ProductService
 	{
-		private readonly IRepository<Category> _repository;
+		private readonly IRepository<Product> _repository;
 
-        public CategoryService(IRepository<Category> repository)
+        public ProductService(IRepository<Product> repository)
         {
 			_repository = repository;
         }
 
-        public IEnumerable<Category?> GetAllCategories()
+        public IEnumerable<Product?> GetNewFiveProducts()
 		{
-			return _repository.GetAll(true);
+			return _repository.GetAll();
 		}
-		public Category? GetById(int id)
+		public Product? GetProductById(int id)
 		{
 			return _repository.GetById(id);
 		}
+
+
 	}
 }

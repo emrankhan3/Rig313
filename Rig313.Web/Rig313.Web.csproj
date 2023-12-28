@@ -22,12 +22,12 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\" />
     <Folder Include="Areas\Shop\Data\" />
-    <Folder Include="Areas\Shop\Models\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Rig313.Data\Rig313.Data.csproj" />
+    <ProjectReference Include="..\Rig313.Services\Rig313.Services.csproj" />
   </ItemGroup>
 
 </Project>

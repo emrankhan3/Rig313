@@ -1,6 +1,8 @@
 ﻿@{
 	ViewData["Title"] = "Shop";
 }
+@model HomeViewModel
+
 <div class="section">
 	<!-- container -->
 	<div class="container">
@@ -14,7 +16,7 @@
 					</div>
 					<div class="shop-body">
 						<h3>Laptop<br>Collection</h3>
-						<a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Laptop" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+						<a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="1" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -27,7 +29,7 @@
 					</div>
 					<div class="shop-body">
 						<h3>Desktop<br>Collection</h3>
-						<a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Desktop" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+						<a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="2" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -40,7 +42,7 @@
 					</div>
 					<div class="shop-body">
 						<h3>Accessories<br>Collection</h3>
-						<a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Accessories" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+						<a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="3" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -82,146 +84,50 @@
 						<!-- tab -->
 						<div id="tab1" class="tab-pane active">
 							<div class="products-slick" data-nav="#slick-nav-1">
-								<!-- product -->
-								<div class="product">
-									<div class="product-img">
-										<img src="~/img/product01.png" alt="">
-										<div class="product-label">
-											<span class="sale">-30%</span>
-											<span class="new">NEW</span>
+								@foreach(var item in Model.NewProducts){
+									<!-- product -->
+									<div class="product">
+										<div class="product-img">
+											<img src="@item.ImageUrl" alt="">
+											<div class="product-label">
+												@if(item.Discount>0.0){
+													<span class="sale">-@(item.Discount*100)%</span>
+												}
+												<span class="new">NEW</span>
+											</div>
+										</div>
+										<div class="product-body">
+
+											<h3 class="product-name"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="@item.Id">@item.Name</a></h3>
+											@if(item.Discount > 0.0){
+												<h4 class="product-price">@(item.Price*(1-item.Discount))
+													<del class="product-old-price">@item.Price</del>
+												</h4>
+											}
+											else
+											{
+												<h4 class="product-price">@item.Price</h4>
+											}
+											<div class="product-rating">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+											</div>
+											<div class="product-btns">
+												<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+												<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
+												<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+											</div>
+										</div>
+										<div class="add-to-cart">
+											<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
 										</div>
 									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="productid">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-									</div>
-								</div>
-								<!-- /product -->
-								<!-- product -->
-								<div class="product">
-									<div class="product-img">
-										<img src="~/img/product02.png" alt="">
-										<div class="product-label">
-											<span class="new">NEW</span>
-										</div>
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="productid">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-									</div>
-								</div>
-								<!-- /product -->
-								<!-- product -->
-								<div class="product">
-									<div class="product-img">
-										<img src="~/img/product03.png" alt="">
-										<div class="product-label">
-											<span class="sale">-30%</span>
-										</div>
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="productid">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-										<div class="product-rating">
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-									</div>
-								</div>
-								<!-- /product -->
-								<!-- product -->
-								<div class="product">
-									<div class="product-img">
-										<img src="~/img/product04.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="productid">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-									</div>
-								</div>
-								<!-- /product -->
-								<!-- product -->
-								<div class="product">
-									<div class="product-img">
-										<img src="~/img/product05.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="productid">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-											<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-											<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-									</div>
-								</div>
-								<!-- /product -->
+									<!-- /product -->
+								}
+								
 							</div>
 							<div id="slick-nav-1" class="products-slick-nav"></div>
 						</div>
