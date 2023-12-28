@@ -118,7 +118,39 @@
 			</div>
 		</div>
 	</header>
-
+	
+	<nav id="navigation">
+		<!-- container -->
+		<div class="container">
+			<!-- responsive-nav -->
+			<div id="responsive-nav">
+				<!-- NAV -->
+				<ul class="main-nav nav navbar-nav flex-grow-1">
+					<li class="active"><a asp-area="Shop" asp-controller="Home" asp-action="Index">Home</a></li>
+					
+					@foreach(var item in Model.Categories)
+					{
+						<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="@item.Id">@item.Name</a></li>
+					}
+					
+					@* <li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Laptop">Laptops</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Desktop">Desktops</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Processor">Processor</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Motherboard">Motherboard</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="RAM">RAM</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="SSD">SSD</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="HDD">HDD</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Casing">Desktop Casing</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Monitor">Monitor</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="PSU">Power Supply</a></li>
+					<li><a asp-area="Shop" asp-controller="Products" asp-action="Category" asp-route-id="Accessories">Accessories</a></li> *@
+				</ul>
+				<!-- /NAV -->
+			</div>
+			<!-- /responsive-nav -->
+		</div>
+		<!-- /container -->
+	</nav>
 	<!-- /NAVIGATION -->
 	<!-- SECTION -->
 

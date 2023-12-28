@@ -106,14 +106,6 @@ namespace Rig313.Data.Migrations
                             DisplayOrder = 2,
                             ImageUrl = "SampleImageUrl2",
                             Name = "Desktop"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Accessories",
-                            DisplayOrder = 3,
-                            ImageUrl = "SampleImageUrl3",
-                            Name = "Accessories"
                         });
                 });
 
