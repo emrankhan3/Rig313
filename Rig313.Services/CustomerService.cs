@@ -6,24 +6,22 @@ using System.Threading.Tasks;
 using Rig313.Data;
 using Rig313.Core.Categories;
 using Rig313.Data.IRepository;
+using Rig313.Core.Customers;
 using Rig313.Services.IServices;
 
 namespace Rig313.Services
 {
-	public class CategoryService : IService
+	public class CustomerService : IService
 	{
-		private readonly IRepository<Category> _repository;
+		private readonly IRepository<Customer> _repository;
 
-        public CategoryService(IRepository<Category> repository)
+        public CustomerService(IRepository<Customer> repository)
         {
 			_repository = repository;
         }
 
-        public IEnumerable<Category?> GetAllCategories()
-		{
-			return _repository.GetAll(true);
-		}
-		public Category? GetById(int id)
+        
+		public Customer? GetById(int id)
 		{
 			return _repository.GetById(id);
 		}

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Rig313.Core.Categories;
+using Rig313.Core.Customers;
 using Rig313.Core.Products;
 using Rig313.Data.IRepository;
 using Rig313.Services;
@@ -13,25 +14,22 @@ namespace Rig313.Web.Areas.Shop.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IRepository<Category> _categoryRepo;
-        private readonly IRepository<Product> _productRepo;
+        private readonly CategoryService _categoryService;
+        private readonly ProductService _productService;
 
-        public HomeController(ILogger<HomeController> logger, IRepository<Category> categoryRepo,
-            IRepository<Product> productRepo)
+        public HomeController(ILogger<HomeController> logger, CategoryService categoryService, ProductService productService)
         {
             _logger = logger;
-            _categoryRepo = categoryRepo;
-            _productRepo = productRepo;
+            _categoryService = categoryService;
+            _productService = productService;
         }
 
         public IActionResult Index()
         {
-            CategoryService categoryService = new CategoryService(_categoryRepo);
-            ProductService productService = new ProductService(_productRepo);
             HomeViewModel model = new HomeViewModel();
-            model.Categories = categoryService.GetAllCategories();
-            model.NewProducts = productService.GetNewFiveProducts();
-            return View(model);
+            model.Categories = _categoryService.GetAllCategories();
+            model.NewProducts = _productService.GetNewFiveProducts();
+			return View(model);
         }
 
         public IActionResult Profile()
