@@ -8,10 +8,11 @@ using Rig313.Core.Categories;
 using Rig313.Data.IRepository;
 using Rig313.Core.Products;
 using Rig313.Core.Inventories;
+using Rig313.Services.IServices;
 
 namespace Rig313.Services
 {
-	public class ProductService
+	public class ProductService: IService
 	{
 		private readonly IRepository<Product> _repository;
 
@@ -24,6 +25,11 @@ namespace Rig313.Services
 		{
 			return _repository.GetAll();
 		}
+		public IEnumerable<Product?> GetAllProducts()
+		{
+			return _repository.GetAll();
+		}
+
 		public Product? GetProductById(int id)
 		{
 			return _repository.GetById(id);

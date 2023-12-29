@@ -2,6 +2,9 @@
 	ViewData["Title"] = "Product Details";
 }
 @model ProductViewModel
+@{
+	<partial name="_NavigationPartial" />
+}
 
 <div class="section">
 	<!-- container -->
@@ -18,7 +21,7 @@
 			</div>
 			<div class="product-body col-md-7">
 				<p class="product-category">@Model.Category.Name</p>
-				<h3 class="product-name"><a asp-area="Shop" asp-controller="Product" asp-action="Details" asp-route-id="@Model.Product.Id">@Model.Product.Name</a></h3>
+				<h3 class="">@Model.Product.Name</h3>
 				@if (Model.Product.Discount > 0.0)
 				{
 					<h4 class="product-price"> Price : @(Model.Product.Price * (1 - Model.Product.Discount))
@@ -29,7 +32,11 @@
 				{
 					<h4 class="product-price">Price : @Model.Product.Price</h4>
 				}
-				<h4 class="product-price">Stock Available : @(Model.Inventory.StockAvailable - Model.Inventory.OnPending)</h4>
+				
+				@if (Model.Inventory.StockAvailable - Model.Inventory.OnPending > 0)
+				{
+					<h4 class="product-price">Stock Available : @(Model.Inventory.StockAvailable - Model.Inventory.OnPending)</h4>
+				}
 				<div class="product-rating">
 					<i class="fa fa-star"></i>
 					<i class="fa fa-star"></i>
@@ -41,15 +48,23 @@
 				<div class="product-details">
 					<p>Description Goes Here</p>
 				</div>
-				<form class="form" method="post">
-					<input type="number" value="1" min="1" style="padding:5px 10px; margin-bottom:5px;"/>
-					&nbsp;
-					<span>
-						<button class="btn btn-primary"><i class="fa fa-cart-plus"></i> Add To Cart</button>
+				@if (Model.Inventory.StockAvailable - Model.Inventory.OnPending > 0)
+				{
+					<form class="form" method="post">
+						<input type="number" value="1" min="1" style="padding:5px 10px; margin-bottom:5px;" />
 						&nbsp;
-						<button type="submit" class="btn btn-success"><i class="fa fa-cart-arrow-down"></i> Buy Now</button>
-					</span>
-				</form>
+						<span>
+							<button class="btn btn-primary"><i class="fa fa-cart-plus"></i> Add To Cart</button>
+							&nbsp;
+							<button type="submit" class="btn btn-success"><i class="fa fa-cart-arrow-down"></i> Buy Now</button>
+						</span>
+					</form>
+				}
+				else
+				{
+					<h4 class="product-price">Out of Stock</h4>
+				}
+
 			</div>
 		</div>
 	</div>

@@ -1,8 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using Rig313.Core.Categories;
-using Rig313.Core.Inventories;
-using Rig313.Core.Products;
-using Rig313.Data.IRepository;
 using Rig313.Services;
 using Rig313.Web.Areas.Shop.Models;
 using Rig313.Web.Models;
@@ -14,17 +10,18 @@ namespace Rig313.Web.Areas.Shop.Controllers
     public class ProductController : Controller
     {
         private readonly ILogger<ProductController> _logger;
-		private readonly IRepository<Category> _categoryRepo;
-		private readonly IRepository<Product> _productRepo;
-		private readonly IRepository<Inventory> _inventoryRepo;
+        private readonly CategoryService _categoryService;
+        private readonly ProductService _productService;
+        private readonly InventoryService _inventoryService;
 
-		public ProductController(ILogger<ProductController> logger, IRepository<Category> categoryRepo,
-			IRepository<Product> productRepo, IRepository<Inventory> inventoryRepo )
+
+		public ProductController(ILogger<ProductController> logger, CategoryService categoryService,
+            ProductService productService, InventoryService inventoryService)
 		{
 			_logger = logger;
-			_categoryRepo = categoryRepo;
-			_productRepo = productRepo;
-			_inventoryRepo = inventoryRepo;
+            _categoryService = categoryService;
+            _productService = productService;
+            _inventoryService = inventoryService;
 		}
 
 		public IActionResult Index()
@@ -35,14 +32,11 @@ namespace Rig313.Web.Areas.Shop.Controllers
         public IActionResult Details(int? id)
         {
 			if (id == null) return NotFound();
-			CategoryService categoryService = new CategoryService(_categoryRepo);
-			ProductService productService = new ProductService(_productRepo);
-			InventorService inventorService = new InventorService(_inventoryRepo);
 			ProductViewModel model = new ProductViewModel();
-			model.Categories = categoryService.GetAllCategories();
-			model.Product = productService.GetProductById((int)id);
-			model.Inventory = inventorService.GetInventoryByProductId((int)id);
-			model.Category = categoryService.GetById((int)model.Product.CategoryId);
+			model.Categories = _categoryService.GetAllCategories();
+			model.Product = _productService.GetProductById((int)id);
+			model.Inventory = _inventoryService.GetInventoryByProductId((int)id);
+			model.Category = _categoryService.GetById((int)model.Product.CategoryId);
 			return View(model);
         }
 

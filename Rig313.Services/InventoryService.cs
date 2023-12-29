@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using Rig313.Data;
 using Rig313.Data.IRepository;
 using Rig313.Core.Inventories;
+using Rig313.Services.IServices;
 
 namespace Rig313.Services
 {
-	public class InventorService
+	public class InventoryService : IService
 	{
 		private readonly IRepository<Inventory> _repository;
 
-        public InventorService(IRepository<Inventory> repository)
+        public InventoryService(IRepository<Inventory> repository)
         {
 			_repository = repository;
         }
